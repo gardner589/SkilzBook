@@ -1,0 +1,6 @@
+<% @skills.each do |skill| %>
+    <p><%= skill.game %></p>
+    <% skill.builds.each do |build| %>
+    <p><%= build.name %></p>
+    <%end%>
+<% end %>

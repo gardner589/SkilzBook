@@ -5,3 +5,5 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+tekken = Skill.create(game: "Tekken 6")
+kaz = Build.create(name: "Kazuya" , skill: tekken)

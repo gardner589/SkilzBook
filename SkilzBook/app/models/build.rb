@@ -1,3 +1,3 @@
 class Build < ActiveRecord::Base
-  belong_to :skill
+  belongs_to :skill
 end
