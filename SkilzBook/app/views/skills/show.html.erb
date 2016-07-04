@@ -1,0 +1,7 @@
+<h1><%= @skill.game%></h1> <h2><%= link_to "All Skilz", skills_path%></h2>
+<p><%= link_to "Add Build", new_skill_build_path(@skill)%></p>
+<% @skill.builds.each do |build| %>
+<p><%= build.name %></p>
+<p><%= build.details %></p>
+<p><%= link_to "Edit Build", edit_skill_build_path(@skill, build)%></p>
+<%end%>
