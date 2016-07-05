@@ -15,6 +15,7 @@ class SkillsController < ApplicationController
   def update
     @skill = Skill.find(params[:id])
     @skill.update(skill_params)
+    redirect_to @skill.build
   end
   def destroy
     @skill = Skill.find(params[:id])

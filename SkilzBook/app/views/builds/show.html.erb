@@ -1,4 +1,7 @@
-
-<% skill.builds.each do |build| %>
-<p><%= build.name %></p>
-<%end%>
+<br/>
+<div>
+<h1><%= @build.name %></h1>
+<img class="bld-img" src="<%= @build.img_url%>">
+<p><%= @build.details %></p>
+<div><%= @build.vid_url %></div>
+</div>

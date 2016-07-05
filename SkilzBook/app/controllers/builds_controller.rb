@@ -11,9 +11,13 @@ class BuildsController < ApplicationController
     redirect_to @skill
   end
   def index
-    redirect_to skills_path
+    @build = Build.find(params[:id])
   end
   def edit
+    @skill = Skill.find(params[:skill_id])
+    @build = Build.find(params[:id])
+  end
+  def show
     @skill = Skill.find(params[:skill_id])
     @build = Build.find(params[:id])
   end
@@ -21,7 +25,7 @@ class BuildsController < ApplicationController
     @skill = Skill.find(params[:skill_id])
     @build = Build.find(params[:id])
     @build.update(build_params)
-    redirect_to skill_path
+    redirect_to @skill
   end
 
 

@@ -1,13 +1,19 @@
 <h1><%= @skill.game%></h1>
+<% if current_user %>
 <p><%= link_to "Add Build", new_skill_build_path(@skill)%></p>
+<%end%>
+
 <% @skill.builds.each do |build| %>
-<%= link_to(@skill) do%>
+<%= link_to skill_build_path(@skill, build) do%>
 <div>
 <p><%= build.name %></p>
 <img class="bld-img" src="<%= build.img_url %>">
 <p><%= build.details %></p>
 </div>
 <%end%>
+<% if current_user %>
 <p><%= link_to "Edit Build", edit_skill_build_path(@skill, build)%></p>
 <p><%= link_to 'Delete', @skills, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+<%end%>
+
 <%end%>
