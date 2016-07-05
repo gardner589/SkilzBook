@@ -1,3 +1,4 @@
 class Skill < ActiveRecord::Base
-  has_many :builds
+  belongs_to :user
+  has_many :builds,  dependent: :destroy
 end

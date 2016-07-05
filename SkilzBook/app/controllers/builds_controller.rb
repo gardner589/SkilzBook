@@ -10,6 +10,9 @@ class BuildsController < ApplicationController
     @skill.builds.create(build_params)
     redirect_to @skill
   end
+  def index
+    redirect_to skills_path
+  end
   def edit
     @skill = Skill.find(params[:skill_id])
     @build = Build.find(params[:id])
@@ -25,6 +28,6 @@ class BuildsController < ApplicationController
 
   private
   def build_params
-    params.require(:build).permit(:name,:details)
+    params.require(:build).permit(:name,:details,:img_url,:vid_url)
   end
 end

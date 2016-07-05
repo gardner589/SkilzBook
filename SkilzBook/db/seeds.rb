@@ -5,5 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+Skill.destroy_all
+Build.destroy_all
 tekken = Skill.create(game: "Tekken 6")
-kaz = Build.create(name: "Kazuya" , skill: tekken)
+kaz = Build.create(name: "Kazuya" ,details: "I'm pretty good with Kaz. Check out my links", skill: tekken)

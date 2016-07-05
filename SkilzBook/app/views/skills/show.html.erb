@@ -1,7 +1,13 @@
-<h1><%= @skill.game%></h1> <p><%= link_to "All Skilz", skills_path%></p>
+<h1><%= @skill.game%></h1>
 <p><%= link_to "Add Build", new_skill_build_path(@skill)%></p>
 <% @skill.builds.each do |build| %>
+<%= link_to(@skill) do%>
+<div>
 <p><%= build.name %></p>
+<img class="bld-img" src="<%= build.img_url %>">
 <p><%= build.details %></p>
+</div>
+<%end%>
 <p><%= link_to "Edit Build", edit_skill_build_path(@skill, build)%></p>
+<p><%= link_to 'Delete', @skills, method: :delete, data: { confirm: 'Are you sure?' } %></p>
 <%end%>

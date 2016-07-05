@@ -13,8 +13,11 @@
  *= require_tree .
  *= require_self
  */
+ @import url(https://fonts.googleapis.com/css?family=PT+Sans+Narrow);
 
 body {
+  min-width: 100%;
+  min-height: 100%;
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -22,6 +25,7 @@ body {
   -webkit-text-stroke-width: .5px;
   -webkit-text-stroke-color: black;
   background-color: #999;
+  font-family: PT Sans Narrow;
 
 }
 a {
@@ -33,4 +37,14 @@ a:visited{
   color: white;
   -webkit-text-stroke-width: .5px;
   -webkit-text-stroke-color: black;
+}
+.bld-img{
+  text-align: center;
+  height: 10%;
+  width: 10%;
+}
+.skills {
+  position: absolute;
+  top: 5%;
+  right: 5%;
 }

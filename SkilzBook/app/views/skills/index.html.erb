@@ -1,5 +1,4 @@
-<h1>My Skilz</h1>
-<%= link_to "Add Skilz" , new_skill_path%>
+<h1>My Skilz</h1> <%= link_to "Add Skilz" , new_skill_path%>
 <% @skills.each do |skill| %>
     <h3><%= link_to skill.game, skill %></h3>
 
