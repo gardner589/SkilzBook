@@ -1,9 +1,10 @@
+<h1> Skillz </h1>
 <% if current_user %>
-<h1>My Skilz</h1> <%= link_to "Add Skilz" , new_skill_path%>
-<%else%>
-<h1> Skilz </h1>
+<h1>My Skillz</h1> <%= link_to "Add Skillz" , new_skill_path%>
 <% end %>
+<div>
 <% @skills.each do |skill| %>
     <h3><%= link_to skill.game, skill %></h3>
 
 <% end %>
+</div>

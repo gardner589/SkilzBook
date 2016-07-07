@@ -1,5 +1,5 @@
 <br/>
-<div class="sekshin">
+<div >
 <h1><%= @build.name %></h1>
 <img class="bld-img" src="<%= @build.img_url%>">
 <p><%= @build.details %></p>
@@ -27,12 +27,11 @@
 <p><%= link_to '[+]', new_build_comment_path(@build) %></p>
 
 </div>
-  <div class="comment_sekshin">
+  <div class="">
     <% if @build.comments.last %>
       <% @build.comments.each do |comment|%>
         <p class="comment"><%= comment.body %></p>
       <%end%>
     <%end%>
   </div>
-
 </div>
