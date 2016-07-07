@@ -11,15 +11,15 @@ class BuildsController < ApplicationController
     redirect_to @skill
   end
   def index
-    @build = Build.find(params[:id])
+    @builds = Build.all
   end
   def edit
     @skill = Skill.find(params[:skill_id])
     @build = Build.find(params[:id])
   end
   def show
-    @skill = Skill.find(params[:skill_id])
     @build = Build.find(params[:id])
+    @skill = @build.skill
   end
   def update
     @skill = Skill.find(params[:skill_id])
@@ -27,11 +27,17 @@ class BuildsController < ApplicationController
     @build.update(build_params)
     redirect_to @skill
   end
+  def destroy
+    @build = Build.find(params[:id])
+    @skill = @build.skill
+    @build.destroy
+    redirect_to @skill
+  end
 
 
 
   private
   def build_params
-    params.require(:build).permit(:name,:details,:img_url,:vid_url)
+    params.require(:build).permit(:name,:details,:img_url, :build_id)
   end
 end

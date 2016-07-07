@@ -26,6 +26,6 @@ class SkillsController < ApplicationController
 
   private
   def skill_params
-    params.require(:skill).permit(:game)
+    params.require(:skill).permit(:game, :build_id)
   end
 end

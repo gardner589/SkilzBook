@@ -4,5 +4,9 @@ Rails.application.routes.draw do
   resources :skills do
     resources :builds
   end
+  resources :builds do
+    resources :comments
+    resources :links
+  end
 
 end

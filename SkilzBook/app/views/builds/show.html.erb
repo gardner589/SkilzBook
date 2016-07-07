@@ -1,7 +1,38 @@
 <br/>
-<div>
+<div class="sekshin">
 <h1><%= @build.name %></h1>
 <img class="bld-img" src="<%= @build.img_url%>">
 <p><%= @build.details %></p>
-<div><%= @build.vid_url %></div>
+<div class="sekshin">
+  <div class="row">
+    <h2 class="pad">Links</h2>
+    <% if current_user %>
+    <p><%= link_to '[+]', new_build_link_path(@build) %></p>
+    <%end%>
+  </div>
+<% if @build.links.last %>
+  <% @build.links.each do |link| %>
+    <%= link_to @build.name + " skillz " + link.title, link.link_url %>
+    <% if current_user %>
+    <p><%= link_to "Edit", edit_build_link_path(@build, link)%></p>
+    <p><%= link_to 'Delete', build_link_path(@build, link), method: :delete, data: { confirm: 'Are you sure?' } %></p>
+    <%end%>
+    <br>
+  <%end%>
+<%end%>
+</div>
+<br>
+<div class="row">
+<h2 class="pad">Comments</h2>
+<p><%= link_to '[+]', new_build_comment_path(@build) %></p>
+
+</div>
+  <div class="comment_sekshin">
+    <% if @build.comments.last %>
+      <% @build.comments.each do |comment|%>
+        <p class="comment"><%= comment.body %></p>
+      <%end%>
+    <%end%>
+  </div>
+
 </div>

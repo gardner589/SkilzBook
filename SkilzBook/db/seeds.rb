@@ -8,4 +8,4 @@
 Skill.destroy_all
 Build.destroy_all
 tekken = Skill.create(game: "Tekken 6")
-kaz = Build.create(name: "Kazuya" ,details: "I'm pretty good with Kaz. Check out my links", skill: tekken)
+kaz = Build.create(name: "Kazuya" ,details: "I'm pretty good with Kaz. Check out my links",img_url:"http://tekken6-official.eu/templates/1/medias/img/photos/characters/hd//kazuya.png", skill: tekken)

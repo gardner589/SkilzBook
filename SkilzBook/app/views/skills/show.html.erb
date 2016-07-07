@@ -1,19 +1,24 @@
 <h1><%= @skill.game%></h1>
 <% if current_user %>
-<p><%= link_to "Add Build", new_skill_build_path(@skill)%></p>
+<div class="row comment">
+<p class="pad"><%= link_to "Add Build", new_skill_build_path(@skill)%></p>
+<p><%= link_to "Delete", @skill, method: :delete, data: {confirm: "You sure mate?"}%></p>
+</div>
 <%end%>
 
 <% @skill.builds.each do |build| %>
-<%= link_to skill_build_path(@skill, build) do%>
-<div>
-<p><%= build.name %></p>
-<img class="bld-img" src="<%= build.img_url %>">
-<p><%= build.details %></p>
-</div>
-<%end%>
-<% if current_user %>
-<p><%= link_to "Edit Build", edit_skill_build_path(@skill, build)%></p>
-<p><%= link_to 'Delete', @skills, method: :delete, data: { confirm: 'Are you sure?' } %></p>
-<%end%>
-
+  <div class="comment">
+      <div>
+        <%= link_to skill_build_path(@skill, build) do %>
+          <p><%= build.name %></p>
+          <img class="bld-img" src="<%= build.img_url %>">
+        <%end%>
+        <div class="row">
+          <% if current_user %>
+            <p><%= link_to "Edit Build", edit_skill_build_path(@skill, build)%></p>
+            <p><%= link_to 'Delete', skill_build_path(@skill, build), method: :delete, data: { confirm: 'Are you sure?' } %></p>
+          <%end%>
+        </div>
+      </div>
+  </div>
 <%end%>

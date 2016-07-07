@@ -1,0 +1,16 @@
+<br><br><br><br><br>
+<h2>New Comment</h2>
+<div class= "center_form">
+  <br>
+<%= form_for([@build, @comment]) do |f| %>
+
+<br>
+
+  <%= f.label :comment %>
+  <br>
+  <%= f.text_area :body %>
+<br>
+  <%= f.submit %>
+
+<% end %>
+</div>

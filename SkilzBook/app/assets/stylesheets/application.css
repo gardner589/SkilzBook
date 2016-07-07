@@ -24,19 +24,22 @@ body {
   color: aquaMarine;
   -webkit-text-stroke-width: .5px;
   -webkit-text-stroke-color: black;
-  background-color: #999;
-  font-family: PT Sans Narrow;
+  background-color: #777;
+  font-family: ;
 
 }
 a {
   text-decoration: none;
   color: aquaMarine;
+
 }
 a:visited{
   text-decoration: none;
-  color: white;
   -webkit-text-stroke-width: .5px;
   -webkit-text-stroke-color: black;
+}
+a:hover{
+  color: white;
 }
 .bld-img{
   text-align: center;
@@ -52,6 +55,32 @@ a:visited{
   position: absolute;
   top: 5%;
   left: 5%;
+}
+.sekshin{
+  padding: 5%;
+  border-bottom: 2px solid #444;
+}
+.comment_sekshin{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.comment{
+  margin: auto;
+  width: 50%;
+  border-bottom: 2px solid #888;
+}
+.center_form{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+.row{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;;
 }
 .pad {
   padding-right: 20px;

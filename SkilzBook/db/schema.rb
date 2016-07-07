@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160705205308) do
+ActiveRecord::Schema.define(version: 20160706143026) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,7 +20,6 @@ ActiveRecord::Schema.define(version: 20160705205308) do
     t.string   "name"
     t.text     "details"
     t.string   "img_url"
-    t.string   "vid_url"
     t.integer  "skill_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -29,9 +28,27 @@ ActiveRecord::Schema.define(version: 20160705205308) do
   add_index "builds", ["skill_id"], name: "index_builds_on_skill_id", using: :btree
 
   create_table "comments", force: :cascade do |t|
+    t.string   "body"
+    t.integer  "build_id"
+    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  add_index "comments", ["build_id"], name: "index_comments_on_build_id", using: :btree
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
+
+  create_table "links", force: :cascade do |t|
+    t.string   "title"
+    t.string   "link_url"
+    t.integer  "user_id"
+    t.integer  "build_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "links", ["build_id"], name: "index_links_on_build_id", using: :btree
+  add_index "links", ["user_id"], name: "index_links_on_user_id", using: :btree
 
   create_table "skills", force: :cascade do |t|
     t.string   "game"
@@ -61,5 +78,9 @@ ActiveRecord::Schema.define(version: 20160705205308) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   add_foreign_key "builds", "skills"
+  add_foreign_key "comments", "builds"
+  add_foreign_key "comments", "users"
+  add_foreign_key "links", "builds"
+  add_foreign_key "links", "users"
   add_foreign_key "skills", "users"
 end
