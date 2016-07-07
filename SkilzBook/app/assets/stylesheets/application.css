@@ -40,6 +40,7 @@ a:visited{
 }
 a:hover{
   color: white;
+  text-shadow: 2px 2px 10px white;
 }
 .bld-img{
   text-align: center;

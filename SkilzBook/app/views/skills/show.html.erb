@@ -15,7 +15,7 @@
         <%end%>
         <div class="row">
           <% if current_user %>
-            <p><%= link_to "Edit Build", edit_skill_build_path(@skill, build)%></p>
+            <p class="pad"><%= link_to "Edit Build", edit_skill_build_path(@skill, build)%></p>
             <p><%= link_to 'Delete', skill_build_path(@skill, build), method: :delete, data: { confirm: 'Are you sure?' } %></p>
           <%end%>
         </div>
