@@ -21,22 +21,27 @@ body {
   display: flex;
   flex-direction: column;
   text-align: center;
-  color: aquaMarine;
-  -webkit-text-stroke-width: .5px;
-  -webkit-text-stroke-color: black;
+  -webkit-text-stroke-width: .2px;
+  -webkit-text-stroke-color: white;
+  color: maroon;
   background-color: #777;
   font-family: Indie Flower ;
 
 }
+p{
+  color: maroon;
+  font-size: 20px;
+}
 a {
   text-decoration: none;
-  color: aquaMarine;
+  color: maroon;
+  font-size: 24px;
 
 }
 a:visited{
   text-decoration: none;
   -webkit-text-stroke-width: .5px;
-  -webkit-text-stroke-color: black;
+  -webkit-text-stroke-color: red;
 }
 a:hover{
   color: white;
