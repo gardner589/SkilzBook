@@ -7,16 +7,20 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class="user-info skills-left">
-     <% if current_user %>
-       Welcome, <%= current_user.email %>
-       <%= link_to 'Signout', destroy_user_session_path, :method => :delete %>
-     <% else %>
-       <%= link_to 'Signup', new_user_registration_path, class: "pad" %>
-       <%= link_to 'Login', new_user_session_path%>
-     <% end %>
+  <div class="headbar">
+    <div class="user-info skills-left">
+       <% if current_user %>
+         Welcome, <%= current_user.email %>
+         <%= link_to 'Signout', destroy_user_session_path, :method => :delete %>
+       <% else %>
+         <%= link_to 'Signup', new_user_registration_path, class: "pad" %>
+         <%= link_to 'Login', new_user_session_path%>
+       <% end %>
+     </div>
+
+     <%= link_to "All Skillz", skills_path,class: "skills"%>
    </div>
-  <%= link_to "All Skillz", skills_path,class: "skills"%>
+
 
 <%= yield %>
 
