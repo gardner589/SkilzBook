@@ -1,18 +1,18 @@
-<div class="center_form">
+<div class="comment_sekshin">
 <h1><%= @skill.game%></h1>
 <% if current_user %>
-<div class="row comment">
+<div class="cent">
 <p class="pad"><%= link_to "Add Build", new_skill_build_path(@skill)%></p>
 <p><%= link_to "Delete", @skill, method: :delete, data: {confirm: "You sure mate?"}%></p>
 </div>
 <%end%>
 
 <% @skill.builds.each do |build| %>
-  <div class="comment">
+  <div class="cent">
       <div>
         <%= link_to skill_build_path(@skill, build) do %>
           <h4><%= build.name %></h4>
-          <img class="bld-img" src="<%= build.img_url %>">
+          <img class="bld-img cent" src="<%= build.img_url %>">
         <%end%>
         <div class="row">
           <% if current_user %>

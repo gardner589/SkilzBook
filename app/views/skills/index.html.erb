@@ -1,12 +1,15 @@
-<div class="center_form">
-<h1> Skillz </h1>
-<% if current_user %>
-<h1>My Skillz</h1> <%= link_to "Add Skillz" , new_skill_path%>
-<% end %>
-<div>
-<% @skills.each do |skill| %>
-    <h1><%= link_to skill.game, skill %></h1>
-
-<% end %>
-</div>
+<div class="container-fluid comment_sekshin">
+<h1 class=""> Skillz </h1>
+  <div class="">
+    <% if current_user %>
+      <h1>My Skillz</h1> <%= link_to "Add Skillz" , new_skill_path%>
+      <% current_user.skills.each do |skill| %>
+        <h1><%= link_to skill.game, skill %>
+      <%end%>
+    <% else %>
+      <% @skills.each do |skill| %>
+          <h1><%= link_to skill.game, skill %></h1>
+      <% end %>
+    <%end%>
+  </div>
 </div>
