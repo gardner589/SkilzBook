@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 20160706143026) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  # AM: Not sure if it's possible, but are there more descriptive model names we could use here? "Build" seems a little ambiguous. Might just be me though...
   create_table "builds", force: :cascade do |t|
     t.string   "name"
     t.text     "details"

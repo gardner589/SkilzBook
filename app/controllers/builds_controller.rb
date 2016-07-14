@@ -38,6 +38,7 @@ class BuildsController < ApplicationController
 
   private
   def build_params
+    # AM: Do you need to include `build_id` in your strong params? It seems that you can get that information in the URL.
     params.require(:build).permit(:name,:details,:img_url, :build_id)
   end
 end
