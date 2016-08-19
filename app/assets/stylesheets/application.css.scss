@@ -13,37 +13,17 @@
 //  *= require_tree .
 //  *= require_self
 //  */
-// /*@import url(https://fonts.googleapis.com/css?family=Indie+Flower);*/
-//
-// body {
-//   min-width: 100%;
-//   min-height: 100%;
-//   display: flex;
-//   flex-direction: column;
-//   text-align: center;
-//   -webkit-text-stroke-width: .2px;
-//   -webkit-text-stroke-color: white;
-//   color: maroon;
-//   background-color: #777;
-//   font-family: Indie Flower ;
-//
-// }
-// p{
-//   color: maroon;
-//   font-size: 20px;
-// }
-body{
-  color: white;
-}
+// @import url(https://fonts.googleapis.com/css?family=Indie+Flower);
+
 a {
   text-decoration: none;
   color: white;
-  font-size: 26px;
+  font-size: 1em;
 }
 a:visited{
   text-decoration: none;
   -webkit-text-stroke-width: .5px;
-  -webkit-text-stroke-color: pink;
+  -webkit-text-stroke-color: white;
 }
 a:hover{
   color: white;
