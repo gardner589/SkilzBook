@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid text-center">
   <div>
     <% if current_user %>
       <h1>My Skillz</h1> <%= link_to "Add Skillz" , new_skill_path%>
@@ -8,6 +8,11 @@
     <% else %>
       <% @skills.each do |skill| %>
           <h1><%= link_to skill.game, skill, :style=>'color: #fff; text-decoration: none;' %></h1>
+          <% if skill.user.email %>
+            <p>Added by: <%= skill.user.email %></p>
+          <%else%>
+            <p>Added by: Admin</p>
+          <%end%>
       <% end %>
     <%end%>
   </div>

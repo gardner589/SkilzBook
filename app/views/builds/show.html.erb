@@ -1,36 +1,55 @@
-<br/>
-<div class="">
-<h1><%= @build.name %></h1>
-<img class="bld-img" src="<%= @build.img_url%>">
-<p><%= @build.details %></p>
+<div class="container text-center">
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <h1 class="panel-title">
+        <%= @build.name %>
+      </h1>
+    </div>
+    <div class="panel-body">
+      <img class="bld-img" src="<%= @build.img_url%>">
+      <p><%= @build.details %></p>
+    </div>
+  </div>
 <div class="">
   <div class="">
-    <h2 class="">Links</h2>
+    <h2 class="">Exhibits</h2>
     <% if current_user %>
-    <p><%= link_to '[+]', new_build_link_path(@build) %></p>
+    <p><%= link_to 'New Exhib', new_build_link_path(@build) %></p>
     <%end%>
   </div>
 <% if @build.links.last %>
   <% @build.links.each do |link| %>
-    <%= link_to @build.name + " skillz " + link.title, link.link_url %>
+    <div class="panel exhib col-sm-12 text-center">
+      <div class="panel-heading">
+        <%= link_to  link.title, link.link_url, class: "panel-title" %>
+      </div>
+      <%if link.link_url.include? 'watch?v=' %>
+      <iframe src="https://www.youtube.com/embed/<%= link.link_url.split('watch?v=')[1]%>" allowfullscreen></iframe>
+      <%elsif link.link_url.include? '.be/'%>
+      <iframe src="https://www.youtube.com/embed/<%= link.link_url.split('.be/')[1]%>" allowfullscreen></iframe>
+      <%end%>
     <% if current_user %>
-    <p><%= link_to "Edit", edit_build_link_path(@build, link)%></p>
-    <p><%= link_to 'Delete', build_link_path(@build, link), method: :delete, data: { confirm: 'Are you sure?' } %></p>
+    <%= button_to 'Remove', build_link_path(@build, link), method: :delete, data: { confirm: 'You sure mate?' }, class: "btn btn-danger pull-left" %>
+      <a href="<%= edit_build_link_path(@build, link)%>">
+        <button type="button" class="btn btn-sm btn-warning pull-right glyphicon glyphicon-pencil"> Edit</button>
+      </a>
     <%end%>
     <br>
+  </div>
   <%end%>
 <%end%>
 </div>
-<!-- <%= button_to "Back", skill_path, class: "btn btn-success btn-sm glyphicon glyphicon-hand-left"%> -->
 <a href="/skills/<%= @skill.id %>">
   <button type="button" class="btn btn-info btn-md glyphicon glyphicon-hand-left"> Back</button>
 </a>
 <br>
-<div class="">
-<h2 class="">Comments</h2>
-<p><%= link_to '[+]', new_build_comment_path(@build) %></p>
+  <div class="">
+    <h2 class="">Comments</h2>
+    <a href="<%= new_build_comment_path(@build) %>">
+      <button type="button" class="btn btn-success glyphicon glyphicon-plus-sign"></button>
+    </a>
 
-</div>
+  </div>
   <div class="">
     <% if @build.comments.last %>
       <% @build.comments.each do |comment|%>
@@ -38,4 +57,6 @@
       <%end%>
     <%end%>
   </div>
+
+
 </div>

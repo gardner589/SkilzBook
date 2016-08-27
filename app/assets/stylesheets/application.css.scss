@@ -34,7 +34,7 @@ a:hover{
 }
 body{
   width: 100%;
-  background: linear-gradient(skyBlue 4%, white 37%, #ccc 60%) fixed;
+  background: linear-gradient(skyBlue 40%, white 50%, #ccc 70% ) fixed;
   color: white;
 }
 .bld-img{
@@ -42,29 +42,13 @@ body{
   // height: 10em;
   width: 10em;
 }
-// .comment_sekshin{
-//   display: flex;
-//   flex-direction: column;
-//   text-align: center;
-// }
-
-// .cent{
-//   display: flex;
-//   flex-direction: row;
-//   justify-content: center;
-//   align-items: center;
-//   text-align: center;
-//   margin: auto;
-// }
-
-// .video_class video{
-//   padding: 0;
-//   margin: 0;
-//   width: 100vw;
-//   height: 100vh;
-//   position: absolute;
-//   z-index: -1000;
-// }
+.exhib{
+  // width: 30em;
+}
+.exhib iframe{
+  width: 30em;
+  height: 20em;
+}
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
