@@ -1,11 +1,11 @@
 <br/>
-<div class="comment_sekshin">
+<div class="">
 <h1><%= @build.name %></h1>
-<img class="bld-img cent" src="<%= @build.img_url%>">
+<img class="bld-img" src="<%= @build.img_url%>">
 <p><%= @build.details %></p>
-<div class="sekshin">
-  <div class="row">
-    <h2 class="pad">Links</h2>
+<div class="">
+  <div class="">
+    <h2 class="">Links</h2>
     <% if current_user %>
     <p><%= link_to '[+]', new_build_link_path(@build) %></p>
     <%end%>
@@ -21,16 +21,20 @@
   <%end%>
 <%end%>
 </div>
+<!-- <%= button_to "Back", skill_path, class: "btn btn-success btn-sm glyphicon glyphicon-hand-left"%> -->
+<a href="/skills/<%= @skill.id %>">
+  <button type="button" class="btn btn-info btn-md glyphicon glyphicon-hand-left"> Back</button>
+</a>
 <br>
-<div class="row">
-<h2 class="pad">Comments</h2>
+<div class="">
+<h2 class="">Comments</h2>
 <p><%= link_to '[+]', new_build_comment_path(@build) %></p>
 
 </div>
   <div class="">
     <% if @build.comments.last %>
       <% @build.comments.each do |comment|%>
-        <p class="comment"><%= comment.body %></p>
+        <p class=""><%= comment.body %></p>
       <%end%>
     <%end%>
   </div>

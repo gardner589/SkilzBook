@@ -5,27 +5,40 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 </head>
-<body class="container-fluid col-md-12">
+<body class="container-fluid col-sm-12">
   <!-- <div class="video_class">
     <video src="https://vimeo.com/43838748/download?t=1471462554&v=102624473&s=e0ff7035dba44ba0d69b9d8fafa12bf142ed7c390af7d699fded63a7b32312af" autoplay ></video>
   </div> -->
-  <div class="">
-    <div class="">
-       <% if current_user %>
-         Welcome, <%= current_user.email %>
-         <%= link_to 'Signout', destroy_user_session_path, :method => :delete %>
-       <% else %>
-         <%= link_to 'Signup', new_user_registration_path, class: "pad" %>
-         <br>
-         <%= link_to 'Login', new_user_session_path%>
-       <% end %>
-       <p class="pull-right"><%= link_to "All Skillz", skills_path %></p>
-     </div>
+  <div class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <ul class="nav navbar-nav col-sm-12">
+        <% if current_user %>
+        Welcome, <%= current_user.email %>
+        <li>
+          <%= button_to 'Signout', destroy_user_session_path, :method => :delete, class: "btn btn-info btn-xs"%>
+        </li>
+        <% else %>
+        <li class="pull-left">
+          <a href="<%= new_user_registration_path %>">Sign Up</a>
+          <!-- <%= button_to 'Signup', new_user_registration_path, class: "btn btn-info btn-xs pull-left" %> -->
+        </li>
+        <li class="pull-left">
+          <a href="<%= new_user_session_path %>">Login</a>
+        </li>
+        <% end %>
+        <li class="pull-right">
+          <a href="/skills">All Skills</a>
+        </li>
+        <!-- <%= button_to "All Skillz", skills_path, class: "btn btn-info btn-xs pull-right" %> -->
+      </ul>
 
-   </div>
+    </div>
 
-<div class="container">
+  </div>
+
+<div class="container-fluid">
 <%= yield %>
 </div>
 

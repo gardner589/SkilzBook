@@ -1,14 +1,13 @@
-<div class="container-fluid comment_sekshin">
-<h1 class=""> Skillz </h1>
-  <div class="">
+<div class="container-fluid">
+  <div>
     <% if current_user %>
       <h1>My Skillz</h1> <%= link_to "Add Skillz" , new_skill_path%>
       <% current_user.skills.each do |skill| %>
-        <h1><%= link_to skill.game, skill %>
+        <h1><%= link_to skill.game, skill, :style=>'color: #fff; text-decoration: none;' %>
       <%end%>
     <% else %>
       <% @skills.each do |skill| %>
-          <h1><%= link_to skill.game, skill %></h1>
+          <h1><%= link_to skill.game, skill, :style=>'color: #fff; text-decoration: none;' %></h1>
       <% end %>
     <%end%>
   </div>
