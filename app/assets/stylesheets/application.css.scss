@@ -14,7 +14,7 @@
 //  *= require_self
 //  */
 
-@import 'https://fonts.googleapis.com/css?family=Oswald';
+@import url('https://fonts.googleapis.com/css?family=Oswald');
 
 
 body{
@@ -50,6 +50,7 @@ a:hover{
 .exhib{
   // width: 30em;
 }
+
 .exhib iframe{
   width: 30em;
   height: 20em;
