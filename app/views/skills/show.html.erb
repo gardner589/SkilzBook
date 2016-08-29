@@ -3,20 +3,17 @@
 <% if current_user %>
 <div>
 <p><%= link_to '', @skill, method: :delete, data: {confirm: "You sure mate?"}, class: 'btn btn-sm btn-danger glyphicon glyphicon-trash'%></p>
-<p class=""><%= link_to "Add Build", new_skill_build_path(@skill), :style=>'color: #fff; text-decoration: none;'%></p>
+<p class=""><%= link_to "", new_skill_build_path(@skill), :style=>'color: #fff; text-decoration: none;', class:'btn btn-success glyphicon glyphicon-plus-sign'%></p>
 </div>
 <%end%>
 
 <% @skill.builds.each do |build| %>
   <div class="">
       <div>
-        <!-- <%= link_to skill_build_path(@skill, build), :style=>'color: #fff; text-decoration: none;' do %> -->
-        <a href="<%=skill_build_path(@skill, build)%>" >
-          <button type="button" class="btn btn-sm btn-success glyphicon glyphicon-plus-sign"></button>
-        </a>
+        <%= link_to skill_build_path(@skill, build), :style=>'color: #fff; text-decoration: none;' do %>
           <h4><%= build.name %></h4>
           <img class="bld-img" src="<%= build.img_url %>">
-          <div class="col-sm-4">
+          <div class="col-sm-1 text-center">
             <% if current_user %>
             <a href="<%=edit_skill_build_path(@skill, build)%>" >
               <button type="button" class="btn btn-sm btn-warning glyphicon glyphicon-pencil"></button>
