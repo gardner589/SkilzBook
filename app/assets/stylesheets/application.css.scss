@@ -13,8 +13,18 @@
 //  *= require_tree .
 //  *= require_self
 //  */
-// @import url(https://fonts.googleapis.com/css?family=Indie+Flower);
 
+@import 'https://fonts.googleapis.com/css?family=Oswald';
+
+
+body{
+  width: 100%;
+  background: url('BGimage.jpg') 100% fixed;
+  background-position: cover;
+  color: white;
+  font-family: Oswald;
+  padding-top: 70px;
+}
 a {
   text-decoration: none;
   color: white;
@@ -31,11 +41,6 @@ a:hover{
   -webkit-text-stroke-width: .5px;
   -webkit-text-stroke-color: skyBlue;
   z-index: 3000;
-}
-body{
-  width: 100%;
-  background: linear-gradient(skyBlue 40%, white 50%, #ccc 70% ) fixed;
-  color: white;
 }
 .bld-img{
   text-align: center;
