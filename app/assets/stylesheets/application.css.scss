@@ -19,7 +19,7 @@
 
 body{
   width: 100%;
-  background: url('BGimage.jpg') 100% fixed;
+  background: url('http://gasparbattha.com/img/work/poh/poh08.jpg') 100% fixed;
   background-position: cover;
   color: white;
   font-family: Oswald;
@@ -41,6 +41,14 @@ a:hover{
   -webkit-text-stroke-width: .5px;
   -webkit-text-stroke-color: skyBlue;
   z-index: 3000;
+}
+h1{
+  text-shadow: 1px 1px 10px white;
+  color: #096ECB;
+}
+h2{
+  text-shadow: 1px 1px 10px white;
+  color: #096ECB;
 }
 .bld-img{
   text-align: center;
