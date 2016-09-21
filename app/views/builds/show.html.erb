@@ -53,7 +53,7 @@
   <div class="">
     <% if @build.comments.last %>
       <% @build.comments.each do |comment|%>
-        <p class=""><%= comment.body %></p>
+        <p class="addedBy"><%= comment.body %></p>
       <%end%>
     <%end%>
   </div>

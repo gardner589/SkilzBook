@@ -21,7 +21,6 @@ body{
   width: 100%;
   background: url('http://gasparbattha.com/img/work/poh/poh08.jpg') 100% fixed;
   background-position: cover;
-  color: white;
   font-family: Oswald;
   padding-top: 70px;
 }
@@ -63,6 +62,8 @@ h2{
   width: 30em;
   height: 20em;
 }
-
+.addedBy{
+  color: #ccc;
+}
 @import "bootstrap-sprockets";
 @import "bootstrap";

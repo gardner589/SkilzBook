@@ -23,13 +23,13 @@
     <div class="jumbotron">
       <h1>SkillsBook</h1>
       <p>
-        The best place to show off your favorite skills!
+        The best place to show off your favorite videos of people with skills!
       </p>
     </div>
     <% @skills.each do |skill| %>
         <h1><%= link_to skill.game, skill, :style=>'color: #fff; text-decoration: none;' %></h1>
         <% if skill.user.email %>
-          <p class="">Added by: <%= skill.user.email.split('@')[0] %></p>
+          <p class="addedBy">Added by: <%= skill.user.email.split('@')[0] %></p>
         <%else%>
           <p>Added by: Admin</p>
         <%end%>
